@@ -8,7 +8,20 @@
 
 <body>
 	<!-- the entire body must be written by student -->
-    <script type="text/javascript" src="./script.js">
+	<textarea id="evaluatedText" oninput="countWords()"></textarea>
+<!-- 	The oninput attribute fires when an element gets user input -->
+	<h3 id="wordCount">0</h3>
+    <script >
+                   function countWords() {
+			let text = document.getElementById("evaluatedText").value;
+			let wordCount = 0;
+			if (text.trim() !== "") {
+				// regx '\s+' will split at one or more spaces
+				// trim() will remove trailing and leading spaces
+				wordCount = text.trim().split(/\s+/).length;
+			}
+			document.getElementById("wordCount").textContent = wordCount;
+		}
 </script>
 
 </body>
